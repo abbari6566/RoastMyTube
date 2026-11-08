@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+/* RoastMyTube design tokens — dark "neon obsidian" look from design_samples/. */
+@theme {
+  --color-bg: #0c0c0f;
+  --color-bg-2: #141418;
+  --color-surface: #1b1b20;
+  --color-surface-2: #232329;
+  --color-well: #111114;
+  --color-line: #2c2c33;
+  --color-fg: #ececf1;
+  --color-muted: #a3a3ae;
+  --color-dim: #6e6e7a;
+  --color-flame: #ff4d5e;
+  --color-flame-soft: #ff8a94;
+  --color-amber: #f6bd3b;
+  --color-ember: #ff7a1a;
+
+  --font-display: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+
+  --animate-marquee: marquee 60s linear infinite;
+  --animate-flicker: flicker 2.4s ease-in-out infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+
+html {
+  color-scheme: dark;
+  background: var(--color-bg);
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+}
+
+@layer components {
+  /* Tiny uppercase label used everywhere in the designs. */
+  .eyebrow {
+    font-family: var(--font-display);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .display {
+    font-family: var(--font-display);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 0.95;
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    border-radius: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    font-family: var(--font-display);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .card {
+    border-radius: 1rem;
+    border: 1px solid color-mix(in oklab, var(--color-line) 60%, transparent);
+    background: var(--color-surface);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-flicker {
+    animation: none;
+  }
+}

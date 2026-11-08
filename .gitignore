@@ -1,0 +1,90 @@
+# ─── Secrets / env ─────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+*.pem
+
+# ─── Client (Next.js) ──────────────────────────────────────────
+node_modules/
+.next/
+out/
+build/
+coverage/
+.vercel/
+*.tsbuildinfo
+next-env.d.ts
+.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# ─── Server (Python / uv) ──────────────────────────────────────
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+wheels/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# ─── User data (never commit real Takeout exports) ─────────────
+watch-history.json
+watch-history.html
+Takeout/
+takeout-*.zip
+
+# ─── Editor / OS ───────────────────────────────────────────────
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ─── AI agent / planning files (local only) ────────────────────
+CLAUDE.md
+PLAN.md
+PROGRESS.md
+memory.md
+Agentic_Coding_Notes.MD
+AGENTS.md
+.claude/
+.agents/
+skills-lock.json
+
+# Local design references
+design_samples/
+# Local credentials and agent configuration
+.aws/
+.codex/
+*.key
+
+# Generated logs and caches
+*.log
+.cache/
+.turbo/
+.uv-cache/
+.tox/
+.nox/
+.hypothesis/
+.coverage.*
+coverage.xml
+*.egg
+.ipynb_checkpoints/
+
+# Editor temporary files
+*.swo
+*~
